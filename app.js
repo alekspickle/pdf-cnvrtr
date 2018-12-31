@@ -15,7 +15,9 @@ async function generatePdf(url, outputDir, filename) {
   //   if (request.url.includes("name-you-can-filter")) request.abort();
   //   else request.continue();
   // });
-  await page.goto(url, { waitUntil: ["domcontentloaded"] });
+  await page.goto(url, {
+    waitUntil: ["domcontentloaded", "networkidle0", "load"]
+  });
   try {
     await page.pdf({
       path: path.join(outputDir, filename),
