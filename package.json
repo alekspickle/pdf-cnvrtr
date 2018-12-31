@@ -7,10 +7,6 @@
     "hummus": "^1.0.95",
     "puppeteer": "^1.11.0"
   },
-  "devDependencies": {
-    "tap": "~0.3.0",
-    "request": "~2.10.0"
-  },
   "scripts": {
     "test": "tap test/*.js"
   },
