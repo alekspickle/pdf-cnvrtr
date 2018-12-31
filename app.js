@@ -1,5 +1,4 @@
 const fs = require("fs");
-const utf8 = require("utf8");
 const hummus = require("hummus");
 const stdin = process.stdin;
 const puppeteer = require("puppeteer");
@@ -10,14 +9,11 @@ stdin.setEncoding("utf-8");
 async function generatePdf(url, outputDir, filename) {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  // await page.setRequestInterceptionEnabled(true);
-  // page.on("request", request => {
-  //   if (request.url.includes("name-you-can-filter")) request.abort();
-  //   else request.continue();
-  // });
+
   await page.goto(url, {
     waitUntil: ["domcontentloaded", "networkidle0", "load"]
   });
+
   try {
     await page.pdf({
       path: path.join(outputDir, filename),
@@ -42,14 +38,17 @@ stdin.on("data", data => {
   //get actual data, instead of data+0D+0A
   const actualData = decodeURI(encodeURI(data).replace(/\%0D\%0A/, ""));
 
+  //combine pdf
   if (actualData === "combine") {
     fs.readdir("./output", (err, items) => {
       console.log(items);
       if (items.length) combinePdfs(items);
     });
+    //exit
   } else if (actualData === "exit" || actualData === "q") {
     console.log("Process completed.");
     process.exit();
+    //generate PDF
   } else if (
     actualData.includes("http://") ||
     actualData.includes("https://")
