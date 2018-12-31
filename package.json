@@ -1,27 +1,26 @@
 {
   "name": "pdf-converter",
   "version": "0.0.1",
-  "description": "Saves ",
-  "main": "canon.js",
+  "description": "Saves websites to PDF format",
+  "main": "app.js",
   "dependencies": {
     "hummus": "^1.0.95",
-    "puppeteer": "^1.11.0"
+    "puppeteer": "^1.7.0"
   },
   "scripts": {
+    "dev": "node app.js",
     "test": "tap test/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/isaacs/canonical-host"
+    "url": ""
   },
   "keywords": [
-    "redirect",
-    "canonical",
-    "canon",
-    "hostname",
-    "host",
-    "header"
+    "pdf",
+    "converter",
+    "save",
+    "screen"
   ],
-  "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
-  "license": "ISC"
+  "author": "Aleks Gnatovskyi",
+  "license": "Mozilla Public License 2.0"
 }
