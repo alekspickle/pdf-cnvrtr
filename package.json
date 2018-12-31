@@ -5,7 +5,8 @@
   "main": "canon.js",
   "dependencies": {
     "hummus": "^1.0.95",
-    "puppeteer": "^1.11.0"
+    "puppeteer": "^1.11.0",
+    "utf8": "^3.0.0"
   },
   "devDependencies": {
     "tap": "~0.3.0",
