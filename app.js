@@ -21,6 +21,17 @@ async function generatePdf(url, outputDir, filename) {
   });
 
   try {
+    const gotItPath = `//div[contains(@class, "CookieConsent__Button")]`;
+
+    console.log(`confirming cookies`);
+    const gitItButton = await page.waitForXPath(gotItPath);
+    await gitItButton.click();
+    await page.waitFor(500);
+  } catch (e) {
+    console.log("err", e);
+  }
+
+  try {
     await page.pdf({
       path: path.join(outputDir, filename),
       format: "A4"
