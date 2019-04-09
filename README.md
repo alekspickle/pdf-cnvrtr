@@ -20,6 +20,6 @@ https://github.com/alexgnatrow/pdf-cnvrtr
 
 ## 4. Type "q" + Enter or "exit" + Enter to close.
 
-## 5. Check the output folder!
+## 5. Check the "/output" folder!
 
 ## (optional) 6. If you want to combine few generated PDF files type "combine"
