@@ -4,6 +4,12 @@ const stdin = process.stdin;
 const puppeteer = require("puppeteer");
 const path = require("path");
 
+//create folder if none
+const outputFolder = "./output";
+if (!fs.existsSync(outputFolder)) {
+  fs.mkdirSync(outputFolder);
+}
+
 stdin.setEncoding("utf-8");
 
 async function generatePdf(url, outputDir, filename) {
@@ -49,10 +55,7 @@ stdin.on("data", data => {
     console.log("Process completed.");
     process.exit();
     //generate PDF
-  } else if (
-    actualData.includes("http://") ||
-    actualData.includes("https://")
-  ) {
+  } else if (actualData.includes("http://") || actualData.includes("https://")) {
     const date = Date.now()
       .toString()
       .slice(9);
