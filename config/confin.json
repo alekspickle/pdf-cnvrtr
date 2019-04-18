@@ -1,0 +1,13 @@
+{
+  "BROWSER_ARGS": {
+    "args": ["--no-sandbox", "--disable-setuid-sandbox"],
+    "headless": true
+  },
+  "PAGE_LOAD_OPTIONS": {
+    "timeout": 12000
+  },
+  "VIEWPORT": {
+    "width": 1024,
+    "height": 768
+  }
+}

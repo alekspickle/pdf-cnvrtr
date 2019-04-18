@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "hummus": "^1.0.95",
+    "nconf": "^0.10.0",
     "puppeteer": "^1.7.0"
   },
   "scripts": {
